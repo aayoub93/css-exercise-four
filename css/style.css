@@ -1,4 +1,78 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 body {
   background-color: #dadada;
   font-size: 10px;
+  font-family: 'Trebuchet MS', 'Century Gothic', Helvetica, sans-serif;
+}
+
+.container h1 {
+  font-size: 3em;
+}
+
+.preview h1 {
+  font-weight: 400;
+  padding-top: 1.15em;
+  padding-left: 1.15em;
+}
+
+.header {
+  text-align: center;
+  line-height: 2.5em;
+  font-weight: bolder;
+}
+
+/*Establishes certain general/baseline properties for each of the 4 spaces.*/
+.preview {
+  background-color: #CCC;
+  width: 100%;
+  height: 325px;
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: block;
+  margin: 2em auto;
+}
+
+
+/*Each image being loaded into its respective space.*/
+.baku {
+  background-image: URL('../images/baku.jpg'); /*This is strange; in past experiences using Atom and other similar programs (like Visual Studio Code), I could simply copy a file's project path into the CSS and it would work. Here, however, I had to change the backslash to forwardslash, and also include ../ in the beginning to get the code to recognize and pull the images.*/
+}
+
+.london {
+  background-image: URL('../images/london.png');
+  background-position: center;
+}
+
+.madrid {
+  background-image: URL('../images/madrid.jpg');
+}
+
+.rome {
+  background-image: URL('../images/rome.jpg');
+  background-position: right;
+}
+
+/*Media queries with regards to specific screen sizes, matched as closely as possible to the sample video provided in the lesson's checkpoint assignment.*/
+@media screen and (min-width: 710px) {
+  .preview {
+    width: 45%;
+    margin-left: 3%;
+    display: inline-block;
+    border: 1px solid #707070;      /*Added for show/fun*/
+    border-radius: 2%;              /*Added for show/fun*/
+  }
+}
+
+@media screen and (min-width: 1020px) {
+  .preview {
+    width: 22%;
+    margin-left: 2.25%;
+    display: inline-block;
+    border: 1px solid #707070;      /*Added for show/fun*/
+    border-radius: 2%;              /*Added for show/fun*/
+  }
 }
